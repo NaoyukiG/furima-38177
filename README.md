@@ -29,40 +29,54 @@ Things you may want to cover:
 | nickname            | string      | null: false                   |
 | email               | string      | null: false, unique: true     |
 | encrypted_password  | string      | null: false                   |
-| family-name         | string      | null: false                   |
-| first-name          | string      | null: false                   |
-| family-name-reading | string      | null: false                   |
-| first-name-reading  | string      | null: false                   |
-| birth-date          | date        | null: false                   |
+| family_name         | string      | null: false                   |
+| first_name          | string      | null: false                   |
+| family_name_reading | string      | null: false                   |
+| first_name_reading  | string      | null: false                   |
+| birth_date          | date        | null: false                   |
 
+## Association
+- has_many :products
+- has_one  :destination
+- has_many :purchase_managements
 
 # productsテーブル
 | Column              | Type        | Options                       |
 | ------------------- | ----------- | ----------------------------- |
-| titile              | string      | null: false                   |
-| content             | string      | null: false                   |
-| category            | integer     | null: false                   |
-| status              | integer     | null: false                   |
-| charge              | integer     | null: false                   |
-| shipping-days       | integer     | null: false                   |
+| title               | string      | null: false                   |
+| content             | text        | null: false                   |
+| category_id         | integer     | null: false                   |
+| status_id           | integer     | null: false                   |
+| charge_id           | integer     | null: false                   |
+| shipping_source_id  | integer     | null: false                   |
+| shipping_days_id    | integer     | null: false                   |
 | price               | integer     | null: false                   |
-| user                | references  | null: false, foreign_key:true |
+| purchase_management | references  | null: false, foreign_key:true |
 
+## Association
+- belongs_to :user
+- has_many :purchase_managements
 
 # destinationsテーブル
 | Column              | Type        | Options                       |
 | ------------------- | ----------- | ----------------------------- |
-| postal-code         | string      | null: false                   |
-| prefacture          | integer     | null: false                   |
+| postal_code         | string      | null: false                   |
+| prefacture_id       | integer     | null: false                   |
 | city                | string      | null: false                   |
-| house-number        | string      | null: false                   |
-| building-name       | string      |                               |
-| telephone-number    | string      | null: false                   |
+| house_number        | string      | null: false                   |
+| building_name       | string      |                               |
+| telephone_number    | string      | null: false                   |
 | user                | references  | null: false, foreign_key:true |
 
-# cardsテーブル
+## Association
+- belongs_to :user
+
+# Purchase_managementsテーブル
 | Column              | Type        | Options                       |
 | ------------------- | ----------- | ----------------------------- |
-| user_id             | references  | null: false, foreign_key:true |
-| parchaser_id        | references  | null: false                   |
-| card_id             | references  | null: false                   |
+| user                | references  | null: false, foreign_key:true |
+| product             | references  | null: false, foreign_key:true |
+
+## Association
+- belongs_to :user
+- belongs_to :product
