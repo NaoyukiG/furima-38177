@@ -54,7 +54,6 @@ Things you may want to cover:
 
 ## Association
 - belongs_to :user
-- has_one :destination
 - has_one :purchase_management
 
 # destinationsテーブル
@@ -69,14 +68,16 @@ Things you may want to cover:
 | product             | references  | null: false, foreign_key:true |
 
 ## Association
-- belongs_to :product
+- has_one    :purchase_management
 
 # Purchase_managementsテーブル
 | Column              | Type        | Options                       |
 | ------------------- | ----------- | ----------------------------- |
 | user                | references  | null: false, foreign_key:true |
 | product             | references  | null: false, foreign_key:true |
+| destination         | references  | null: false, foreign_key:true |
 
 ## Association
 - belongs_to :user
 - belongs_to :product
+- belongs_to :destination
