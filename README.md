@@ -37,7 +37,7 @@ Things you may want to cover:
 
 ## Association
 - has_many :products
-- has_one  :purchase_management
+- has_many :purchase_managements
 
 # productsテーブル
 | Column              | Type        | Options                       |
@@ -48,7 +48,7 @@ Things you may want to cover:
 | status_id           | integer     | null: false                   |
 | charge_id           | integer     | null: false                   |
 | prefacture_id       | integer     | null: false                   |
-| shipping_days_id    | integer     | null: false                   |
+| shipping_day_id     | integer     | null: false                   |
 | price               | integer     | null: false                   |
 | user                | references  | null: false, foreign_key:true |
 
@@ -67,14 +67,16 @@ Things you may want to cover:
 | telephone_number    | string      | null: false                   |
 
 ## Association
-- None
+- has_one :destination
 
 # Purchase_managementsテーブル
 | Column              | Type        | Options                       |
 | ------------------- | ----------- | ----------------------------- |
 | user                | references  | null: false, foreign_key:true |
 | product             | references  | null: false, foreign_key:true |
+| destination         | references  | null: false, foreign_key:true |
 
 ## Association
 - belongs_to :user
 - belongs_to :product
+- belongs_to :destination
