@@ -47,7 +47,7 @@ Things you may want to cover:
 | category_id         | integer     | null: false                   |
 | status_id           | integer     | null: false                   |
 | charge_id           | integer     | null: false                   |
-| shipping_source_id  | integer     | null: false                   |
+| prefacture_id       | integer     | null: false                   |
 | shipping_days_id    | integer     | null: false                   |
 | price               | integer     | null: false                   |
 | user                | references  | null: false, foreign_key:true |
@@ -65,19 +65,16 @@ Things you may want to cover:
 | house_number        | string      | null: false                   |
 | building_name       | string      |                               |
 | telephone_number    | string      | null: false                   |
-| product             | references  | null: false, foreign_key:true |
 
 ## Association
-- has_one    :purchase_management
+- None
 
 # Purchase_managementsテーブル
 | Column              | Type        | Options                       |
 | ------------------- | ----------- | ----------------------------- |
 | user                | references  | null: false, foreign_key:true |
 | product             | references  | null: false, foreign_key:true |
-| destination         | references  | null: false, foreign_key:true |
 
 ## Association
 - belongs_to :user
 - belongs_to :product
-- belongs_to :destination
