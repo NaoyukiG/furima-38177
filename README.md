@@ -56,6 +56,17 @@ Things you may want to cover:
 - belongs_to :user
 - has_one :purchase_management
 
+# Purchase_managementsテーブル
+| Column              | Type        | Options                       |
+| ------------------- | ----------- | ----------------------------- |
+| user                | references  | null: false, foreign_key:true |
+| product             | references  | null: false, foreign_key:true |
+
+## Association
+- belongs_to :user
+- belongs_to :product
+- has_one :destination
+
 # destinationsテーブル
 | Column              | Type        | Options                       |
 | ------------------- | ----------- | ----------------------------- |
@@ -65,18 +76,7 @@ Things you may want to cover:
 | house_number        | string      | null: false                   |
 | building_name       | string      |                               |
 | telephone_number    | string      | null: false                   |
+| purchase_management | references  | null: false, foreign_key:true |
 
 ## Association
-- has_one :destination
-
-# Purchase_managementsテーブル
-| Column              | Type        | Options                       |
-| ------------------- | ----------- | ----------------------------- |
-| user                | references  | null: false, foreign_key:true |
-| product             | references  | null: false, foreign_key:true |
-| destination         | references  | null: false, foreign_key:true |
-
-## Association
-- belongs_to :user
-- belongs_to :product
-- belongs_to :destination
+- belongs_to :purchase_management
