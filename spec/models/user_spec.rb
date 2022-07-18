@@ -58,12 +58,18 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("Password is too long (maximum is 128 characters)")
       end
 
-      it 'passwordが半角英数字混合で無いと保存できない' do
+      it 'passwordが半角数字だけでは保存できない' do
         @user.password = '123456'
         @user.password_confirmation = @user.password
         @user.valid?
-        binding.pry
-        expect(@user.errors.full_messages).to include("Encrypted password is invalid. Input half-width characters")
+        expect(@user.errors.full_messages).to include("Password is invalid. Input half-width characters")
+      end
+
+      it 'passwordが半角数字だけでは保存できない' do
+        @user.password = 'abcdef'
+        @user.password_confirmation = @user.password
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password is invalid. Input half-width characters")
       end
 
       it 'passwordとpassword_confirmationが一致しないと保存できない' do
@@ -76,55 +82,55 @@ RSpec.describe User, type: :model do
       it 'family_nameが空だと保存できない' do
         @user.family_name = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Family_name can't be blank")
+        expect(@user.errors.full_messages).to include("Family name can't be blank")
       end
 
       it 'family_nameが全角（漢字・ひらがな・カタカナ）でない場合、保存できない' do
         @user.family_name = 'yamada'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Family_name is invalid. Input full-width characters.")
+        expect(@user.errors.full_messages).to include("Family name is invalid. Input full-width characters.")
       end
 
       it 'first_nameが空だと保存できない' do
         @user.first_name = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("First_name can't be blank")
+        expect(@user.errors.full_messages).to include("First name can't be blank")
       end
 
       it 'first_nameが全角（漢字・ひらがな・カタカナ）でない場合、保存できない' do
         @user.first_name = 'tarou'
         @user.valid?
-        expect(@user.errors.full_messages).to include("First_name is invalid. Input full-width characters.")
+        expect(@user.errors.full_messages).to include("First name is invalid. Input full-width characters.")
       end
 
       it 'family_name_readingが空だと保存できない' do
         @user.family_name_reading = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Family_name_reading can't be blank")
+        expect(@user.errors.full_messages).to include("Family name reading can't be blank")
       end
 
       it 'family_name_readingが全角（カタカナ）でない場合、保存できない' do
         @user.family_name_reading = 'やまだ'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Family_name is invalid. Input full-width katakana characters.")
+        expect(@user.errors.full_messages).to include("Family name reading is invalid. Input full-width katakana characters.")
       end
 
       it 'first_name_readingが空だと保存できない' do
         @user.first_name_reading = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("First_name_reading can't be blank")
+        expect(@user.errors.full_messages).to include("First name reading can't be blank")
       end
 
       it 'first_name_readingが全角（カタカナ）でない場合、保存できない' do
         @user.first_name_reading = 'やまだ'
         @user.valid?
-        expect(@user.errors.full_messages).to include("First_name is invalid. Input full-width katakana characters.")
+        expect(@user.errors.full_messages).to include("First name reading is invalid. Input full-width katakana characters.")
       end
 
       it 'birth_dateが空だと保存できない' do
         @user.birth_date = nil
         @user.valid?
-        expect(@user.errors.full_messages).to include("Birth_date can't be blank")
+        expect(@user.errors.full_messages).to include("Birth date can't be blank")
       end
 
     end
