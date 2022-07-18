@@ -66,7 +66,7 @@
                 <mxCell id="12" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeWidth=2;" parent="2" vertex="1">
                     <mxGeometry y="120" width="460" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="13" value="password" style="shape=partialRectangle;connectable=0;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;strokeWidth=2;" parent="12" vertex="1">
+                <mxCell id="13" value="encrypted_password" style="shape=partialRectangle;connectable=0;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;strokeWidth=2;" parent="12" vertex="1">
                     <mxGeometry width="130" height="30" as="geometry">
                         <mxRectangle width="130" height="30" as="alternateBounds"/>
                     </mxGeometry>
@@ -285,7 +285,7 @@
                 <mxCell id="92" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeWidth=2;" parent="67" vertex="1">
                     <mxGeometry y="210" width="460" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="93" value="shipping_source_id" style="shape=partialRectangle;connectable=0;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;strokeWidth=2;" parent="92" vertex="1">
+                <mxCell id="93" value="prefacture_id" style="shape=partialRectangle;connectable=0;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;strokeWidth=2;" parent="92" vertex="1">
                     <mxGeometry width="150" height="30" as="geometry">
                         <mxRectangle width="150" height="30" as="alternateBounds"/>
                     </mxGeometry>
@@ -303,7 +303,7 @@
                 <mxCell id="96" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;strokeWidth=2;" parent="67" vertex="1">
                     <mxGeometry y="240" width="460" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="97" value="shipping-day_id" style="shape=partialRectangle;connectable=0;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;strokeWidth=2;" parent="96" vertex="1">
+                <mxCell id="97" value="shipping_day_id" style="shape=partialRectangle;connectable=0;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;strokeWidth=2;" parent="96" vertex="1">
                     <mxGeometry width="150" height="30" as="geometry">
                         <mxRectangle width="150" height="30" as="alternateBounds"/>
                     </mxGeometry>
