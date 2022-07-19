@@ -4,6 +4,7 @@ class Product < ApplicationRecord
   belongs_to :status
   belongs_to :chrage
   belongs_to :prefacture
+  belongs_to :shipping_day
 
   belongs_to :user
 
