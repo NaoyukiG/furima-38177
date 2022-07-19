@@ -18,5 +18,4 @@ class Product < ApplicationRecord
     validates :shipping_day_id
   end
 
-
 end
