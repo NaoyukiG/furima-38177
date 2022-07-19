@@ -18,6 +18,5 @@ class Product < ApplicationRecord
     validates :shipping_day_id
   end
 
-  validates :user, presence: true, foreign_key: true
 
 end
