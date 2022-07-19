@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   belongs_to :category
   belongs_to :status
   belongs_to :chrage
+  belongs_to :prefacture
 
   belongs_to :user
 
