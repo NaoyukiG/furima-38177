@@ -61,7 +61,6 @@ RSpec.describe Product, type: :model do
       it 'shipping_day_idを選択していないと保存できない' do
         @product.shipping_day_id = 1
         @product.valid?
-        binding.pry
         expect(@product.errors.full_messages).to include("Shipping day can't be blank")
       end
 
@@ -90,9 +89,9 @@ RSpec.describe Product, type: :model do
       end
 
       it 'userが紐づいていないと保存できない' do
-        @product.user_id = nil
+        @product.user = nil
         @product.valid?
-        expect(@product.errors.full_messages).to include("User can't be blank")
+        expect(@product.errors.full_messages).to include("User must exist")
       end
 
     end
