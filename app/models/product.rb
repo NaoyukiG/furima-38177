@@ -2,7 +2,7 @@ class Product < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
   belongs_to :status
-  belongs_to :chrage
+  belongs_to :charge
   belongs_to :prefacture
   belongs_to :shipping_day
 
