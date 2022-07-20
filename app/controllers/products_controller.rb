@@ -9,6 +9,6 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:Product).permit(:title, :content, :category_id, :status_id, :charge_id, :prefacture_id, :shipping_day_id, :price).merge(user_id: :current_user.id)
+    params.require(:Product).permit(:title, :content, :category_id, :status_id, :charge_id, :prefacture_id, :shipping_day_id, :price, :image).merge(user_id: :current_user.id)
   end
 end
