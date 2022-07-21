@@ -13,11 +13,13 @@ class User < ApplicationRecord
 
   validates :family_name, presence: true,
                           format: {
-                            with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'is invalid. Input full-width characters.', allow_blank: true
+                            with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'is invalid. Input full-width characters.',
+                            allow_blank: true
                           }
   validates :first_name, presence: true,
                          format: {
-                           with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'is invalid. Input full-width characters.', allow_blank: true
+                           with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/, message: 'is invalid. Input full-width characters.',
+                           allow_blank: true
                          }
   validates :family_name_reading, presence: true,
                                   format: {
