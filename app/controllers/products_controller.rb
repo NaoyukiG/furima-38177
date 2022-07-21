@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @product = Product.all.order("created_at DESC")
+    @products = Product.all.order("created_at DESC")
   end
 
   def new
@@ -19,7 +19,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-
+    binding.pry
+    @product = Product.find
   end
 
   private
