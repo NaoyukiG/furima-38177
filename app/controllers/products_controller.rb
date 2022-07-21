@@ -19,8 +19,8 @@ class ProductsController < ApplicationController
   end
 
   def show
-    binding.pry
     @product = Product.find(params[:id])
+    @user = User.find(@product[:user_id])
   end
 
   private
