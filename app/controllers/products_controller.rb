@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
+    @product = Product.all
   end
 
   def new
@@ -20,5 +21,5 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:title, :content, :category_id, :status_id, :charge_id, :prefacture_id, :shipping_day_id, :price, :image).merge(user_id: current_user.id)
   end
-  
+
 end
