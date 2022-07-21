@@ -128,9 +128,9 @@
     </div>
     <ul class='item-lists'>
 
-      <% unless @product.blank? %> 
+      <% unless @products.blank? %> 
         <li class='list'>
-          <% @product.each do |product| %>
+          <% @products.each do |product| %>
             <%= link_to "#" do %>
             <div class='item-img-content'>
               <%= image_tag product.image, class: "item-img" %>
