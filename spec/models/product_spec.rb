@@ -7,15 +7,12 @@ RSpec.describe Product, type: :model do
     end
 
     context '入力内容に問題ない場合' do
-
       it '全ての値が正しく入力されていると保存できる' do
         expect(@product).to be_valid
       end
-
     end
 
     context '入力内容に問題がある場合' do
-
       it 'imageが空だと保存できない' do
         @product.image = nil
         @product.valid?
@@ -73,27 +70,26 @@ RSpec.describe Product, type: :model do
       it 'priceが300未満だと保存できない' do
         @product.price = 299
         @product.valid?
-        expect(@product.errors.full_messages).to include("Price is invalid")
+        expect(@product.errors.full_messages).to include('Price is invalid')
       end
 
       it 'priceが9,999,999より大きいと保存できない' do
-        @product.price = 10000000
+        @product.price = 10_000_000
         @product.valid?
-        expect(@product.errors.full_messages).to include("Price is invalid")
+        expect(@product.errors.full_messages).to include('Price is invalid')
       end
 
       it 'priceが半角数値以外だと保存できない' do
-        @product.price = "１０００"
+        @product.price = '１０００'
         @product.valid?
-        expect(@product.errors.full_messages).to include("Price is invalid")
+        expect(@product.errors.full_messages).to include('Price is invalid')
       end
 
       it 'userが紐づいていないと保存できない' do
         @product.user = nil
         @product.valid?
-        expect(@product.errors.full_messages).to include("User must exist")
+        expect(@product.errors.full_messages).to include('User must exist')
       end
-
     end
   end
 end
