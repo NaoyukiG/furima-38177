@@ -23,7 +23,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    redirect_to root_path unless user_signed_in? && current_user.id == @product.user_id
+    redirect_to root_path unless current_user.id == @product.user_id
   end
 
   def update
@@ -31,6 +31,16 @@ class ProductsController < ApplicationController
       redirect_to product_path(@product.id)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    product = Product.find(params[:id])
+    if current_user.id == product.user_id
+      product.destroy
+      redirect_to root_path
+    else
+      render :index
     end
   end
 
