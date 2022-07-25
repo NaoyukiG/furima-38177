@@ -5,6 +5,9 @@ class DestinationsController < ApplicationController
     @product = Product.find(params[:format])
   end
 
+  def create
+  end
+
   private
 
   def purchase_management_params

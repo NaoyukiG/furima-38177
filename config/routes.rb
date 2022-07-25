@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: 'products#index'
 
   resources :products
-  resources :destinations, only: [:index]
+  resources :destinations, only: [:index, :create]
 end
