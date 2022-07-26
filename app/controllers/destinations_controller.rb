@@ -5,9 +5,12 @@ class DestinationsController < ApplicationController
     @product = Product.find(params[:format])
   end
 
+  def new
+    @destination_purchase = DestinationPurchase.new
+  end
+
   def create
     binding.pry
-    @product = Product.find(params[:format])
     @destination_purchase = DestinationPurchase.new(destination_purchase_params)
     if @destination_purchase.valid?
       @destination_purchase.save

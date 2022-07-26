@@ -6,7 +6,6 @@ class DestinationPurchase
     validates :prefacture_id, numericality: { other_than: 1, message: "can't be blank" }
     validates :city
     validates :house_number
-    validates :building_name
     validates :user_id
     validates :product_id
     validates :purchase_management_id
@@ -20,7 +19,7 @@ class DestinationPurchase
 
   validates :telephone_number, presence: true, 
             format: {
-              with: /^0[0-9]{10,11}$/, message: "is invalid. Input half-width numbers",
+              with: /\A^0[0-9]{10,11}$\z/, message: "is invalid. Input half-width numbers",
               allow_blank: true
               }
 
