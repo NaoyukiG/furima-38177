@@ -8,7 +8,6 @@ class DestinationPurchase
     validates :house_number
     validates :user_id
     validates :product_id
-    validates :purchase_management_id
   end
 
   validates :postal_code, presence: true, 
