@@ -2,12 +2,12 @@ class DestinationsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @product = Product.find(params[:format])
+    @product = Product.find(params[:product_id])
     @destination_purchase = DestinationPurchase.new
   end
 
   def create
-    @product = Product.find(params[:format])
+    @product = Product.find(params[:product_id])
     @destination_purchase = DestinationPurchase.new(destination_purchase_params)
     if @destination_purchase.valid?
       @destination_purchase.save
