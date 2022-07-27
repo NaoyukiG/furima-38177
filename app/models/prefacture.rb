@@ -21,4 +21,5 @@ class Prefacture < ActiveHash::Base
 
   include ActiveHash::Associations
   has_many :products
+  has_many :destination
 end
