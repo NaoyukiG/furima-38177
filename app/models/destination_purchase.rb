@@ -1,6 +1,6 @@
 class DestinationPurchase
   include ActiveModel::Model
-  attr_accessor :postal_code, :prefacture_id, :city, :house_number, :building_name, :telephone_number, :purchase_management_id, :user_id, :product_id
+  attr_accessor :postal_code, :prefacture_id, :city, :house_number, :building_name, :telephone_number, :purchase_management_id, :user_id, :product_id, :token
 
   with_options presence: true do
     validates :prefacture_id, numericality: { other_than: 1, message: "can't be blank" }
@@ -8,6 +8,7 @@ class DestinationPurchase
     validates :house_number
     validates :user_id
     validates :product_id
+    validates :token
   end
 
   validates :postal_code, presence: true, 
