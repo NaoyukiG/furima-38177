@@ -7,7 +7,7 @@ RSpec.describe DestinationPurchase, type: :model do
   describe '商品購入' do
 
     context '内容に問題がない場合' do
-      it '全ての値が正しく入力されていれば商品が購入できる' do
+      it '全ての値が正しく入力されて、tokenが存在すれば商品が購入できる' do
       end
 
       it 'building_nameが空でも商品が購入できる' do
