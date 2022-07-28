@@ -4,6 +4,13 @@ class DestinationsController < ApplicationController
   def index
     @product = Product.find(params[:product_id])
     @destination_purchase = DestinationPurchase.new
+    if current_user.id == @product.user_id
+      redirect_to root_path
+    else
+      if @product.purchase_management.present?
+        redirect_to root_path
+      end
+    end
   end
 
   def create
