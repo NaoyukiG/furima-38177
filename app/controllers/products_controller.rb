@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :find_product, only: [:show, :edit, :update]
 
   def index
-    @products = Product.all.order(created_at: :DESC)  
+    @products = Product.all.order(created_at: :DESC)
   end
 
   def new
@@ -24,9 +24,7 @@ class ProductsController < ApplicationController
 
   def edit
     redirect_to root_path unless current_user.id == @product.user_id
-    if @product.purchase_management.present?
-      redirect_to root_path
-    end
+    redirect_to root_path if @product.purchase_management.present?
   end
 
   def update

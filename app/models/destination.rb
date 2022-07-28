@@ -3,5 +3,4 @@ class Destination < ApplicationRecord
   belongs_to :prefacture
 
   belongs_to :purchase_management
-
 end
