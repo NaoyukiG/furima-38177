@@ -13,7 +13,7 @@ class DestinationPurchase
 
   validates :postal_code, presence: true, 
             format: {
-              with: /\A\d{3}[-]\d{4}\z/, message: "is invalid. Include hyphen(-)",
+              with: /\A[0-9]{3}-[0-9]{4}\z/, message: "is invalid. Include hyphen(-)",
               allow_blank: true
               }
 

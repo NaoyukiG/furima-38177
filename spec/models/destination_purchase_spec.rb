@@ -13,6 +13,7 @@ RSpec.describe DestinationPurchase, type: :model do
 
     context '内容に問題がない場合' do
       it '全ての値が正しく入力されて、tokenが存在すれば商品が購入できる' do
+        expect(@destination_purchase).to be_valid
       end
 
       it 'building_nameが空でも商品が購入できる' do
