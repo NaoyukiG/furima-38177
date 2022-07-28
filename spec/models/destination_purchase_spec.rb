@@ -17,12 +17,16 @@ RSpec.describe DestinationPurchase, type: :model do
       end
 
       it 'building_nameが空でも商品が購入できる' do
+        @destination_purchase.building_name = ''
+        expect(@destination_purchase).to be_valid
       end
       
     end
 
     context '内容に問題がある場合' do
       it 'tokenが空だと商品が購入できない' do
+        @destination_purchase.token = ''
+        
       end
 
       it 'postal_codeが空だと商品が購入できない' do
