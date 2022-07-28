@@ -66,6 +66,18 @@ RSpec.describe DestinationPurchase, type: :model do
         expect(@destination_purchase.errors.full_messages).to include("Telephone number can't be blank")
       end
       
+      it 'telephone_numberが9文字以下では商品が購入できない' do
+        @destination_purchase.telephone_number = '090123456'
+        @destination_purchase.valid?
+        expect(@destination_purchase.errors.full_messages).to include("Telephone number is invalid. Input half-width numbers")
+      end
+
+      it 'telephone_numberが12文字以上では商品が購入できない' do
+        @destination_purchase.telephone_number = '090123456789'
+        @destination_purchase.valid?
+        expect(@destination_purchase.errors.full_messages).to include("Telephone number is invalid. Input half-width numbers")
+      end
+
       it 'telephone_numberが全角数値では商品が購入できない' do
         @destination_purchase.telephone_number = '０９０１２３４５６７８'
         @destination_purchase.valid?
