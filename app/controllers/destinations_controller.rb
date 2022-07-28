@@ -1,9 +1,8 @@
 class DestinationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_product, only: [:index, :cre]
+  before_action :find_product, only: [:index, :create]
 
   def index
-    find_product
     @destination_purchase = DestinationPurchase.new
     if current_user.id == @product.user_id
       redirect_to root_path
@@ -13,7 +12,6 @@ class DestinationsController < ApplicationController
   end
 
   def create
-    find_product
     @destination_purchase = DestinationPurchase.new(destination_purchase_params)
     if @destination_purchase.valid?
       pay_product
