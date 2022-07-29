@@ -14,7 +14,7 @@ class DestinationPurchase
     validates :house_number
     validates :telephone_number,
               format: {
-                with: /\A^0[0-9]{9,10}$\z/, message: 'is invalid. Input half-width numbers',
+                with: /\A^[0-9]{10,11}$\z/, message: 'is invalid. Input half-width numbers',
                 allow_blank: true
               }
     validates :user_id
